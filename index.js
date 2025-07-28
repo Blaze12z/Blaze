@@ -272,7 +272,7 @@ client.on('interactionCreate', async (interaction) => {
     balances.set(message.author.id, money - price);
     shields.set(message.author.id, true);
     const embed = new EmbedBuilder()
-      .setColor('Blue')
+      .setColor('Cyan')
       .setTitle('🛡️ Khiên bảo vệ')
       .setDescription('Bạn đã mua khiên, chống lại 1 lần bắt cóc.');
     return message.channel.send({ embeds: [embed] });
@@ -284,4 +284,4 @@ client.once('ready', () => {
   console.log(`✅ Bot đã đăng nhập với tên ${client.user.tag}`);
 });
 
-client.login('Token');
+client.login(process.env.TOKEN); // ✅ Không lộ
